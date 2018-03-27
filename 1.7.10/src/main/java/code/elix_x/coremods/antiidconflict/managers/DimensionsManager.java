@@ -54,7 +54,7 @@ public class DimensionsManager {
 
 	public static void updateDimensionsFolder() throws Exception {
 		{
-			Hashtable<Integer, Class<? extends WorldProvider>> providers = ReflectionHelper.getPrivateValue(DimensionManager.class, null, "providers");
+			org.eclipse.collections.impl.map.mutable.primitive.IntObjectHashMap<Class<? extends WorldProvider>> providers = ReflectionHelper.getPrivateValue(DimensionManager.class, null, "providers");
 			for(int i = lowerLimit; i <= upperLimit; i++){
 				if(DimensionManager.isDimensionRegistered(i)){
 					try{
@@ -106,7 +106,7 @@ public class DimensionsManager {
 			File all = new File(AntiIdConflictBase.dimensionsFolder, "\\AllIDs.txt");
 			PrintWriter writer = new PrintWriter(all);
 
-			Hashtable<Integer, Class<? extends WorldProvider>> providers = ReflectionHelper.getPrivateValue(DimensionManager.class, null, "providers");
+			org.eclipse.collections.impl.map.mutable.primitive.IntObjectHashMap<Class<? extends WorldProvider>> providers = ReflectionHelper.getPrivateValue(DimensionManager.class, null, "providers");
 			
 			for(int i = lowerLimit; i <= upperLimit; i++){
 				if(DimensionManager.isDimensionRegistered(i)){
